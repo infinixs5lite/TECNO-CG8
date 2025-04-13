@@ -20,6 +20,8 @@ DEVICE_PATH := device/tecno/CG8
 
 # Allow building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -124,21 +126,15 @@ TARGET_COPY_OUT_SYSTEM_EXT = system_ext
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
-# Additional binaries & libraries needed for recovery
-TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster4 \
-    libpuresoftkeymasterdevice
-
 # Hack: prevent anti rollback
-PLATFORM_SECURITY_PATCH := 2099-12-31
-VENDOR_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 16.1.0
+PLATFORM_SECURITY_PATCH := 2127-12-31
+PLATFORM_VERSION := 99.87.36
+PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 
-## TWRP-Specific configuration
-
+# TWRP-Specific configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := TecnoCamon17Pro
-TW_EXTRA_LANGUAGES := true
+TW_DEVICE_VERSION := CAMON_17PRO_NINO
+TW_EXTRA_LANGUAGES := false
 TW_INCLUDE_NTFS_3G := true
 TW_HAS_MTP := true
 TW_EXCLUDE_TWRPAPP := true
@@ -162,9 +158,22 @@ BOARD_USES_MTK_HARDWARE := true
 
 TARGET_SCREEN_HEIGHT := 2460
 
-# Decryption
+# Crypto
 TW_INCLUDE_CRYPTO := true
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_PREPARE_DATA_MEDIA_EARLY := true
+TW_USE_FSCRYPT_POLICY := 2
+TW_FORCE_KEYMASTER_VER := true
+OF_DEFAULT_KEYMASTER_VERSION := 4.1
+
+# Additional Libraries
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libkeymaster4 \
+    libkeymaster41 \
+    libpuresoftkeymasterdevice
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
