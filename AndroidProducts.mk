@@ -17,4 +17,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_CG8.mk
+    $(LOCAL_DIR)/pb_CG8.mk
