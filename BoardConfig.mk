@@ -203,3 +203,7 @@ TW_DEFAULT_KEYMASTER_VERSION := 4.1
 #TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
 #TW_CRYPTO_MNT_POINT := "/data"
 #TW_CRYPTO_KEY_LOC := /metadata/vold/metadata_encryption/key
+
+# PBRP flags
+PB_DISABLE_DEFAULT_DM_VERITY := true
+PB_DISABLE_DEFAULT_PATCH_AVB2 := true
