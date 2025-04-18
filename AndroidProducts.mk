@@ -17,4 +17,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/pb_CG8.mk
+    $(LOCAL_DIR)/omni_CG8.mk
