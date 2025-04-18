@@ -127,6 +127,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
+    libkeymaster41 \
     libpuresoftkeymasterdevice
 
 # Hack: prevent anti rollback
@@ -134,32 +135,66 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
-## TWRP-Specific configuration
-
-TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := TecnoCamon17Pro
-TW_EXTRA_LANGUAGES := true
-TW_INCLUDE_NTFS_3G := true
-TW_HAS_MTP := true
-TW_EXCLUDE_TWRPAPP := true
-TW_INCLUDE_REPACKTOOLS := true
+# Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# Twrp configuration
+TW_EXCLUDE_EXTRA_LANGUAGES := true
+TW_EXCLUDE_BASH := true
+TW_USE_TOOLBOX := true
+TW_EXCLUDE_TZDATA := true
+TW_INCLUDE_REPACKTOOLS := false
+TW_NO_FASTBOOT_BOOT := true
+TW_EXCLUDE_PYTHON := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_LPTOOLS := true
+TW_EXCLUDE_LPDUMP := true
+TW_NO_SCREEN_BLANK := true
 TARGET_USES_MKE2FS := true
+TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_LIBRESETPROP :=true
+TW_INCLUDE_REPACK_TOOL := true
+TW_NO_BATT_PERCENT := true
+TW_NO_CPU_TEMP := true
+TW_USE_EXTERNAL_STORAGE := false
+BOARD_HAS_NO_REAL_SDCARD := true
+TW_EXCLUDE_SUPERSU := true
+TW_NO_FLASH_CURRENT_TWRP := true
+TW_EXCLUDE_TWRPAPP := true
+TW_EXCLUDE_APEX := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_MAX_BRIGHTNESS := 600
+TW_DEFAULT_BRIGHTNESS := 500
+TW_THEME := portrait_hdpi
+TARGET_SCREEN_DENSITY := 320
+TW_REBOOT_BOOTLOADER := true
+TW_EXCLUDE_MTP := true
+TW_NO_USB_STORAGE := true
+TW_USE_LZMA_COMPRESS := true
+TW_OEM_BUILD := true
+
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
+TW_HAS_NO_RECOVERY_PARTITION := true
+
+BOARD_USES_MTK_HARDWARE := true
+
+TARGET_SCREEN_HEIGHT := 2000
+
+# Crypto
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_PREPARE_DATA_MEDIA_EARLY := true
+TW_USE_FSCRYPT_POLICY := 2
+TW_FORCE_KEYMASTER_VER := true
+TW_DEFAULT_KEYMASTER_VERSION := 4.1
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-
-# Device config
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_MAX_BRIGHTNESS := 2047
-TW_DEFAULT_BRIGHTNESS := 1200
-TW_SCREEN_BLANK_ON_BOOT := true
-
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-RECOVERY_SDCARD_ON_DATA := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
-TW_HAS_NO_RECOVERY_PARTITION := true
 
 BOARD_USES_MTK_HARDWARE := true
 
@@ -169,6 +204,7 @@ TARGET_SCREEN_HEIGHT := 2460
 TW_INCLUDE_CRYPTO := true
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 
