@@ -37,14 +37,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     # export FOX_ENABLE_LAB=1
     
     export TARGET_DEVICE_ALT="CG8;CG8H"
-    export OF_DEFAULT_KEYMASTER_VERSION=4.0
     export FOX_AB_DEVICE=1
     export OF_USE_MAGISKBOOT=1
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
-
+    export OF_FBE_METADATA_MOUNT_IGNORE=1
+    export OF_PATCH_AVB20=1
     export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
     export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=0
-
+    export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
     export FOX_USE_NANO_EDITOR=0
     export FOX_USE_BASH_SHELL=1
     export FOX_USE_TAR_BINARY=1
@@ -52,14 +52,20 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
     export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
     export OF_NO_MIUI_PATCH_WARNING=1
-
+    export OF_KEEP_DM_VERITY=1
+    export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
+    
     # Temp
     export OF_NO_SPLASH_CHANGE=1
 
     export FOX_REMOVE_AAPT=1
     export FOX_DISABLE_APP_MANAGER=1
     export FOX_DELETE_AROMAFM=1
-    
+
+    # run a process after formatting data to work-around MTP issues
+    	export OF_RUN_POST_FORMAT_PROCESS=1
+	    export OF_SKIP_ORANGEFOX_PROCESS=1
+     
     export OF_STATUS_INDENT_LEFT=64
     export OF_STATUS_INDENT_RIGHT=64
 
