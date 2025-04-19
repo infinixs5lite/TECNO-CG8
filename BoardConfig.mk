@@ -180,7 +180,6 @@ TW_REBOOT_BOOTLOADER := true
 TW_EXCLUDE_MTP := true
 TW_NO_USB_STORAGE := true
 TW_USE_LZMA_COMPRESS := true
-TW_OEM_BUILD := true
 
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
@@ -202,4 +201,3 @@ TW_DEFAULT_KEYMASTER_VERSION := 4.0
 #TW_CRYPTO_FS_TYPE := "f2fs"
 #TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
 #TW_CRYPTO_MNT_POINT := "/data"
-#TW_CRYPTO_KEY_LOC := /metadata/vold/metadata_encryption/key
