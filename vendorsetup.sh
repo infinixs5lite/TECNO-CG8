@@ -37,7 +37,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     # export FOX_ENABLE_LAB=1
     
     export TARGET_DEVICE_ALT="CG8;CG8H"
-      
+    export OF_DEFAULT_KEYMASTER_VERSION=4.0
+    export OF_DEFAULT_KEYMASTER_VERSION=4
     export FOX_AB_DEVICE=1
     export OF_USE_MAGISKBOOT=1
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
