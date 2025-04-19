@@ -8,4 +8,3 @@ ro.hardware.kmsetkey=beanpod
 ro.hardware.gatekeeper=beanpod
 ro.postinstall.fstab.prefix=/system
 keymaster_ver=4.0
-keymaster_ver=4
