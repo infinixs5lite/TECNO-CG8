@@ -33,13 +33,11 @@ fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
-    export FOX_VERSION="R11.2_0"
     export FOX_BUILD_TYPE=Unofficial
     # export FOX_ENABLE_LAB=1
     
     export TARGET_DEVICE_ALT="CG8;CG8H"
-      export OF_MAINTAINER="NINO"
-
+      
     export FOX_AB_DEVICE=1
     export OF_USE_MAGISKBOOT=1
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
