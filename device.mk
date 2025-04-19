@@ -78,6 +78,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
+# Keystore2
+PRODUCT_PACKAGES += \
+    android.system.keystore2
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
