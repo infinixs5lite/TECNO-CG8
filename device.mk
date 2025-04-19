@@ -86,7 +86,7 @@ PRODUCT_PACKAGES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0
+    android.hardware.keymaster@4.0-service.beanpod
 
 # Additional Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
