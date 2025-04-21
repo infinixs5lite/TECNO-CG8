@@ -63,10 +63,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_NO_MIUI_PATCH_WARNING=1
     export OF_KEEP_DM_VERITY=1
     export OF_FBE_METADATA_MOUNT_IGNORE=1
-    export OF_AB_DEVICE=1
+    export FOX_AB_DEVICE=1
     export OF_USE_MAGISKBOOT=1
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
-   
+        
     # ensure that /sdcard is bind-unmounted before f2fs data repair or format
     export OF_UNBIND_SDCARD_F2FS=1
     
