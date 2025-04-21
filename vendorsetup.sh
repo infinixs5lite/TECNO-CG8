@@ -33,7 +33,6 @@ fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
-    export FOX_VERSION="R11.3_1"
     export FOX_BUILD_TYPE=Unofficial
     # export FOX_ENABLE_LAB=1
     
