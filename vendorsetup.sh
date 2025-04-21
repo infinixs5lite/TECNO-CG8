@@ -56,7 +56,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_STATUS_INDENT_LEFT=64
     export OF_STATUS_INDENT_RIGHT=64
     export OF_FLASHLIGHT_ENABLE=0
-    export OF_FL_PATH1 := "/sys/devices/virtual/torch/torch/torch_level"
+    export OF_FL_PATH1="/sys/devices/virtual/torch/torch/torch_level"
     export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
     export OF_NO_MIUI_PATCH_WARNING=1 
     export OF_PATCH_AVB20=1
@@ -67,7 +67,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_AB_DEVICE=1
     export OF_USE_MAGISKBOOT=1
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
-
+   export OF_FIX_DECRYPTION_ON_DATA_MEDIA=1
+   export OF_USE_SYSTEM_FINGERPRINT=1
+   
     # Custom Rom 
     export OF_DEFAULT_KEYMASTER_VERSION=4.1
    
