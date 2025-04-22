@@ -181,25 +181,6 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_HAS_NO_RECOVERY_PARTITION := true
 
-SHRP_PATH := device/tecno/CG8
-SHRP_DEVICE_CODE := CG8
-SHRP_REC_TYPE := Treble
-SHRP_DEVICE_TYPE := A/B
-SHRP_NOTCH := true
-SHRP_DARK := true
-SHRP_EDL_MODE := 1
-SHRP_EXTERNAL := /external_sd
-SHRP_INTERNAL := /sdcard
-SHRP_OTG := /usb_otg
-SHRP_FLASH := 1
-SHRP_CUSTOM_FLASHLIGHT := true
-SHRP_FONP_1 := /sys/devices/virtual/torch/torch/torch_level
-SHRP_FLASH_MAX_BRIGHTNESS := 1
-SHRP_AB := true
-SHRP_EDL_MODE := 0
-SHRP_EXPRESS_USE_DATA := true
-SHRP_LITE := true
-
 SHRP_EXTREME_SIZE_REDUCTION := true
 
 BOARD_USES_MTK_HARDWARE := true
