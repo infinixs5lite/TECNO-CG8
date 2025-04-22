@@ -34,8 +34,7 @@ fi
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
     export FOX_BUILD_TYPE=Unofficial
-    # export FOX_ENABLE_LAB=1
-    
+
     export TARGET_DEVICE_ALT="CG8,CG8H"
 
     export LC_ALL="C"
@@ -67,11 +66,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_AB_DEVICE=1
     export OF_USE_MAGISKBOOT=1
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
-   export OF_FIX_DECRYPTION_ON_DATA_MEDIA=1
-   export OF_USE_SYSTEM_FINGERPRINT=1
-   
-    # Custom Rom 
-    export OF_DEFAULT_KEYMASTER_VERSION=4.1
+    export OF_FIX_DECRYPTION_ON_DATA_MEDIA=1
    
     # ensure that /sdcard is bind-unmounted before f2fs data repair or format
     export OF_UNBIND_SDCARD_F2FS=1
